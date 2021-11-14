@@ -1,0 +1,40 @@
+# 스레드와 루퍼
+
+- 안드로이드의 스레드는 크게 1개만 존재하는 메인스레드와 여러개의 백그라운드 스레드로 나뉜다.
+
+## 메인스레드(UI 스레드)
+- 화면의 UI 처리 담당
+- 안드로이드 UI 툴킷 구성요소와 상호작용하고 UI 이벤트를 사용자에게 응답
+- UI 이벤트 및 작업에 대해 수 초 내에 응답하지 않으면 안드로이드 시스템은 ANR 표시
+- 즉, 오래 걸리는 코드는 새로운 스레드 생성으로 처리해야 함
+
+## 백그라운드 스레드
+- 네트워크 작업, 파일 업로드와 다운로드, 이미지 처리, 데이터 로딩등을 수행
+```
+// 객체
+class WorkerThread : Thread() {
+    override fun run() {
+        ....
+    }
+}
+
+// Runnable 인터페이스
+class WorkerRunnable : Runnable{
+    override fun run(){
+        ...
+    }
+}
+
+var thread = Thread(WorkerRunnable())
+thread.start()
+
+// 람다식 Runnable 익명 객체
+Thread {
+    ...
+}
+
+// 코틀린 thread()
+thread(start = true){
+    ...
+}
+```

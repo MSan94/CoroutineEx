@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.prj.coroutineex.alram.AlarmActivity
 import com.prj.coroutineex.alram.ImageActivity
 import com.prj.coroutineex.databinding.ActivityMainBinding
+import com.prj.coroutineex.mvvm.view.DbActivity
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
@@ -21,6 +22,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnImage.setOnClickListener {
             var intent = Intent(this, ImageActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnDb.setOnClickListener {
+            var intent = Intent(this, DbActivity::class.java)
             startActivity(intent)
         }
 

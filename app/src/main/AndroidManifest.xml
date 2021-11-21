@@ -19,6 +19,7 @@
         <activity android:name=".alram.AlarmActivity"/>
         <activity android:name=".alram.ImageActivity"/>
         <activity android:name=".mvvm.view.DbActivity"/>
+        <activity android:name=".mvvm.view.NewsActivity"/>
     </application>
 
 </manifest>

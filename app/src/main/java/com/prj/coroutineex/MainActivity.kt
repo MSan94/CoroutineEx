@@ -7,6 +7,7 @@ import com.prj.coroutineex.alram.AlarmActivity
 import com.prj.coroutineex.alram.ImageActivity
 import com.prj.coroutineex.databinding.ActivityMainBinding
 import com.prj.coroutineex.mvvm.view.DbActivity
+import com.prj.coroutineex.mvvm.view.NewsActivity
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
@@ -27,6 +28,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnDb.setOnClickListener {
             var intent = Intent(this, DbActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnNews.setOnClickListener {
+            var intent = Intent(this, NewsActivity::class.java)
             startActivity(intent)
         }
 

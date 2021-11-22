@@ -183,3 +183,77 @@ CoroutineScope(Dispatchers.Main).launch{
     Log.d("코루틴","파일 경과 = $result")
 }
 ```
+
+
+
+```
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.StringTokenizer;
+
+public class Test2 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static int N,idx;
+	static String[] arr;
+	static List<Object> list;
+	static Map<String,List<Object>> map;
+	static Set<String> set;
+	static StringBuilder sb = new StringBuilder();
+	
+	public static void main(String[] args) throws Exception{
+		init();
+		dataInput();
+		print();
+	}
+	
+	static void init() throws Exception{
+		N = Integer.parseInt(br.readLine());
+		st = new StringTokenizer(br.readLine(), " ");
+		arr = new String[st.countTokens()];
+		list = new ArrayList<>();
+		map = new HashMap<>();
+		set = new HashSet<>();
+	}
+	
+	static void dataInput() throws Exception{
+		
+		
+		while(st.hasMoreElements()) {
+			arr[idx++] = st.nextToken();
+		}
+		
+		for(int i=0; i<N; i++) {
+			list.add(arr[i]);
+		}
+		
+		map.put("test1", list);
+		map.put("test2", list);
+		map.put("test1", list);
+		
+		for(int i=0; i<N; i++) {
+			set.add(arr[i]);
+		}
+		
+	}
+	
+	static void print() throws Exception{
+		for(int i=0; i<list.size(); i++) {
+			sb.append(list.get(i)+" ");
+		}
+		System.out.println(sb.toString());
+		
+		System.out.println(map.toString());
+		
+		System.out.println(set.toString());
+	}
+	
+}
+
+```
